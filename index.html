@@ -123,7 +123,15 @@
       align-items:flex-start;
       min-height:160px;
     }
-    .avatar{
+    .avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%; /* make it round */
+      object-fit: cover;  /* crop image nicely */
+      box-shadow: 0 6px 14px rgba(2,6,23,0.5);
+      border: 2px solid rgba(255,255,255,0.2); /* subtle border */
+    }
+    /* .avatar{
       width:76px;
       height:76px;
       border-radius:12px;
@@ -135,7 +143,7 @@
       color:#042029;
       font-size:20px;
       box-shadow: 0 6px 14px rgba(2,6,23,0.5);
-    }
+    } */
     .meta-title{ font-weight:700; font-size:15px; margin:0; color:#eaf6fb}
     .meta-sub{ color:var(--muted); font-size:13px; margin:0; }
 
@@ -195,7 +203,8 @@
 
     <aside class="side" aria-labelledby="profile">
       <div style="display:flex;gap:12px;align-items:center;width:100%;">
-        <div class="avatar" aria-hidden="true">HA</div>
+        <!-- <div class="avatar" aria-hidden="true">HA</div> -->
+        <img class="avatar" src="https://raw.githubusercontent.com/habc0d3r/hengul-site/refs/heads/main/Round%20Photo.png" alt="Hengul Akash profile photo">
         <div>
           <p class="meta-title" id="profile">Hengul Akash</p>
           <p class="meta-sub">Creator — Root Sense</p>
