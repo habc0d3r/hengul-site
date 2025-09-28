@@ -132,24 +132,14 @@
     .avatar {
       width: 76px;
       height: 76px;
-      border-radius: 50%; /* make it round */
-      object-fit: cover;  /* crop image nicely */
+      border-radius: 50%;              /* round shape */
+      background-image: url("https://raw.githubusercontent.com/habc0d3r/hengul-site/refs/heads/main/Round%20Photo.png"); /* put your GitHub raw link here */
+      background-size: cover;          /* crop + fill */
+      background-position: center;     /* center the face */
+      background-repeat: no-repeat;
       box-shadow: 0 6px 14px rgba(2,6,23,0.5);
-      border: 2px solid rgba(255,255,255,0.2); /* subtle border */
+      border: 2px solid rgba(255,255,255,0.2);
     }
-    /* .avatar{
-      width:76px;
-      height:76px;
-      border-radius:12px;
-      background:linear-gradient(180deg,#0ea5a1,#7dd3fc);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      color:#042029;
-      font-size:20px;
-      box-shadow: 0 6px 14px rgba(2,6,23,0.5);
-    } */
     .meta-title{ font-weight:700; font-size:15px; margin:0; color:#eaf6fb}
     .meta-sub{ color:var(--muted); font-size:13px; margin:0; }
 
@@ -197,8 +187,8 @@
           ▶ Watch — Root Sense
         </a>
         <!-- <a class="btn" href="https://hashnode.com/" target="_blank" rel="noopener noreferrer">✍ Hashnode</a> -->
-        <a class="btn" href="mailto:hello@hegnul.in">✉ Email</a>
-        <a class="btn" href="https://github.com/habc0d3r" target="_blank" rel="noopener noreferrer">⌨ GitHub</a>
+        <a class="btn" href="mailto:hello@hegnul.in">Email</a>
+        <a class="btn" href="https://github.com/habc0d3r" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
 
       <footer class="site-foot" aria-hidden="true">
@@ -209,8 +199,7 @@
 
     <aside class="side" aria-labelledby="profile">
       <div style="display:flex;gap:12px;align-items:center;width:100%;">
-        <!-- <div class="avatar" aria-hidden="true">HA</div> -->
-        <img class="avatar" src="https://raw.githubusercontent.com/habc0d3r/hengul-site/refs/heads/main/Round%20Photo.png" alt="Hengul Akash profile photo">
+        <div class="avatar" role="img" aria-label="Hengul Akash profile photo"></div>
         <div>
           <p class="meta-title" id="profile">Hengul Akash</p>
           <p class="meta-sub">Creator — Root Sense</p>
