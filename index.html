@@ -170,6 +170,47 @@
       .card{animation:none}
       .btn:hover{transform:none}
     }
+
+    /* Mobile tweak: top-align content, add safe-area padding, and extra breathing room */
+    @media (max-width: 860px) {
+      /* make body top-aligned on small screens so content doesn't feel vertically centered */
+      body {
+        align-items: flex-start;              /* push content to top */
+        padding-top: env(safe-area-inset-top, 22px); /* respect notch + add default */
+        padding-bottom: 28px;
+      }
+    
+      /* give the card a bit more top padding and allow normal document flow */
+      .card {
+        margin-top: 6px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        box-shadow: 0 10px 35px rgba(2,6,23,0.55);
+        max-width: 980px; /* unchanged */
+        overflow: visible;
+      }
+    
+      /* ensure hero has breathing room from the top */
+      .hero {
+        padding-top: 6px;
+      }
+    
+      /* a touch smaller avatar for smaller screens so it doesn't dominate */
+      .avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+      }
+    
+      /* make sure headings don't hug the top */
+      .name {
+        margin-top: 2px;
+        margin-bottom: 8px;
+      }
+    
+      /* ensure page can scroll if content grows */
+      html, body { min-height: 100%; height: auto; }
+    }
   </style>
 </head>
 <body>
