@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hengul Akash</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0e110f;
+  --border: #2a3329;
+  --gold: #c9a84c;
+  --gold-dim: #8a6e2f;
+  --text: #e8e2d4;
+  --muted: #7a7a6e;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.75; overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; padding: 1.4rem 4rem; display: flex; justify-content: space-between; align-items: center; background: rgba(14,17,15,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100; }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); text-decoration: none; letter-spacing: .05em; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: .78rem; letter-spacing: .15em; text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+
+/* HERO */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding: 0 4rem; padding-top: 90px; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+.hero-eyebrow { font-size: .7rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3.2rem, 5.5vw, 5.5rem); font-weight: 400; line-height: 1.05; margin-bottom: .4rem; }
+.hero-name em { font-style: italic; color: var(--gold); }
+.hero-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.25rem; color: var(--muted); margin: 1.5rem 0 2rem; padding-left: 1.2rem; border-left: 1px solid var(--gold-dim); }
+.hero-desc { font-size: .93rem; color: var(--muted); max-width: 400px; margin-bottom: 2.5rem; line-height: 1.85; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-gold { display: inline-flex; align-items: center; gap: .5rem; background: var(--gold); color: var(--bg); padding: .85rem 2rem; text-decoration: none; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 400; transition: opacity .25s, transform .2s; }
+.btn-gold:hover { opacity: .85; transform: translateY(-1px); }
+.btn-ghost { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid var(--border); color: var(--text); padding: .85rem 2rem; text-decoration: none; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; transition: border-color .25s, transform .2s; }
+.btn-ghost:hover { border-color: var(--gold); transform: translateY(-1px); }
+.hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
+.photo-wrap { width: 320px; height: 320px; border-radius: 50%; overflow: hidden; border: 1px solid var(--gold-dim); box-shadow: 0 0 60px rgba(201,168,76,.12); position: relative; z-index: 1; }
+.photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.ring1 { position: absolute; width: 360px; height: 360px; border-radius: 50%; border: 1px solid var(--border); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.ring2 { position: absolute; width: 420px; height: 420px; border-radius: 50%; border: 1px solid rgba(201,168,76,.08); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+/* DIVIDER */
+.divider { border: none; border-top: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+
+/* SECTIONS */
+section { max-width: 1100px; margin: 0 auto; padding: 6rem 4rem; }
+.section-label { font-size: .68rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; line-height: 1.2; margin-bottom: 2rem; }
+
+/* ABOUT */
+#about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start; }
+.about-right p { font-size: .95rem; color: var(--muted); line-height: 1.9; margin-bottom: 1.4rem; }
+.about-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
+.tag { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; border: 1px solid var(--border); padding: .35rem .9rem; color: var(--muted); }
+
+/* ROOT SENSE */
+#rootsense { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center; }
+.rs-logo-wrap { display: flex; justify-content: center; }
+.rs-logo { width: 210px; height: 210px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 40px rgba(201,168,76,.15); border: 1px solid var(--gold-dim); }
+.rs-desc { font-size: .93rem; color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
+.rs-stat { display: flex; gap: 3rem; margin-bottom: 2rem; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 400; color: var(--gold); line-height: 1; }
+.stat-label { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: .3rem; }
+
+/* CONNECT */
+#connect { text-align: center; }
+.connect-sub { font-size: .93rem; color: var(--muted); margin-bottom: 3rem; }
+.social-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+.social-link { display: inline-flex; align-items: center; gap: .6rem; border: 1px solid var(--border); padding: .75rem 1.6rem; text-decoration: none; color: var(--muted); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; transition: border-color .2s, color .2s, transform .2s; }
+.social-link:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+footer p { font-size: .75rem; color: var(--muted); letter-spacing: .06em; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; text-align: center; gap: 3rem; }
+  .hero-desc { max-width: 100%; }
+  .hero-cta { justify-content: center; }
+  .ring1, .ring2 { display: none; }
+  .photo-wrap { width: 210px; height: 210px; }
+  section { padding: 4rem 1.5rem; }
+  #about { grid-template-columns: 1fr; gap: 2rem; }
+  #rootsense { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .rs-stat { justify-content: center; }
+  footer { flex-direction: column; gap: .5rem; text-align: center; padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Hengul Akash</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#rootsense">Root Sense</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Creator &amp; Explorer</p>
+    <h1 class="hero-name">Hengul<br><em>Akash</em></h1>
+    <p class="hero-tagline">Roots. Ideas. Creation.</p>
+    <p class="hero-desc">Ancient wisdom meets modern curiosity. I make calm, research-backed content that traces the roots of India's cultural practices — and reveals why they still matter.</p>
+    <div class="hero-cta">
+      <a class="btn-gold" href="https://youtube.com/@therootsense" target="_blank">&#9654; Watch Root Sense</a>
+      <a class="btn-ghost" href="#connect">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="ring1"></div>
+    <div class="ring2"></div>
+    <div class="photo-wrap">
+      <img src="photo.png" alt="Hengul Akash"/>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<section id="about">
+  <div class="about-left">
+    <p class="section-label">Who I am</p>
+    <h2 class="section-title">Curious by nature.<br>Rooted by choice.</h2>
+  </div>
+  <div class="about-right">
+    <p>I'm Hengul — a creator and thinker from Assam, India. My work lives at the intersection of ancient Indian knowledge and modern life. I believe most of what we've labelled "superstition" or "ritual" carries a depth of insight our ancestors distilled over centuries — and that this wisdom deserves to be uncovered, not discarded.</p>
+    <p>Through research, storytelling, and a deep reverence for roots, I create content that asks not just <em>what</em> a practice is — but <em>why</em> it exists, and what it might still teach us today.</p>
+    <div class="about-tags">
+      <span class="tag">Content Creator</span>
+      <span class="tag">Ancient Indian Wisdom</span>
+      <span class="tag">Yoga Practitioner</span>
+      <span class="tag">Assam, India</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<section id="rootsense">
+  <div class="rs-text">
+    <p class="section-label">YouTube Channel</p>
+    <h2 class="section-title">Root Sense</h2>
+    <p class="rs-desc">Root Sense is a calm, research-backed YouTube channel that explores the wisdom behind India's ancient cultural practices — fasting, rituals, festivals, and forgotten traditions. Primarily in Assamese with English subtitles, each video traces a root, reveals its purpose, and connects it to modern science and daily life.</p>
+    <div class="rs-stat">
+      <div class="stat-item">
+        <div class="stat-num">&#8734;</div>
+        <div class="stat-label">Stories to tell</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5000+</div>
+        <div class="stat-label">Years of wisdom</div>
+      </div>
+    </div>
+    <a class="btn-gold" href="https://youtube.com/@therootsense" target="_blank">&#9654; Visit the Channel</a>
+  </div>
+  <div class="rs-logo-wrap">
+    <img class="rs-logo" src="rootsense-logo.png" alt="Root Sense"/>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<section id="connect">
+  <p class="section-label">Let's connect</p>
+  <h2 class="section-title">Find me here</h2>
+  <p class="connect-sub">Whether you want to collaborate, follow the work, or just say hello.</p>
+  <div class="social-grid">
+    <a class="social-link" href="https://youtube.com/@therootsense" target="_blank">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+      YouTube
+    </a>
+    <a class="social-link" href="https://instagram.com/theRootSense" target="_blank">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12c0-3.2 0-3.6.1-4.8C2.4 3.9 4 2.3 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12c0 3.3 0 3.7.1 4.9.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24c3.3 0 3.7 0 4.9-.1 4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9 0-3.3 0-3.7-.1-4.9C23.7 2.7 21.3.3 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+      Instagram
+    </a>
+    <a class="social-link" href="https://linkedin.com/in/hengul" target="_blank">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.5v1.6h.1c.5-.9 1.6-1.9 3.3-1.9 3.5 0 4.2 2.3 4.2 5.3v6.4zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm1.8 13H3.5V9h3.6v11.4zM22.2 0H1.8A1.8 1.8 0 0 0 0 1.8v20.4A1.8 1.8 0 0 0 1.8 24h20.4a1.8 1.8 0 0 0 1.8-1.8V1.8A1.8 1.8 0 0 0 22.2 0z"/></svg>
+      LinkedIn
+    </a>
+    <a class="social-link" href="https://github.com/habc0d3r" target="_blank">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.7 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3z"/></svg>
+      GitHub
+    </a>
+    <a class="social-link" href="mailto:hello@hengul.in">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Email
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&#169; 2026 Hengul Akash &middot; hengul.in</p>
+  <p>Made with intention.</p>
+</footer>
+
+</body>
+</html>
